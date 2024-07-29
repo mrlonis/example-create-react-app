@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: ['main']
+    branches: ['main', 'create-react-app']
   pull_request:
-    branches: ['main']
+    branches: ['main', 'create-react-app']
 
 jobs:
   build:

@@ -5,17 +5,27 @@
 
 version: 2
 updates:
-  # Maintain dependencies for GitHub Actions
   - package-ecosystem: 'github-actions'
-    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
     directory: '/'
     schedule:
       interval: 'daily'
-  # Maintain dependencies for npm
-  - package-ecosystem: 'npm' # See documentation for possible values
-    directory: '/' # Location of package manifests
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
       interval: 'daily'
     allow:
       - dependency-type: 'all'
     open-pull-requests-limit: 99
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    target-branch: 'create-react-app'
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    allow:
+      - dependency-type: 'all'
+    open-pull-requests-limit: 99
+    target-branch: 'create-react-app'
